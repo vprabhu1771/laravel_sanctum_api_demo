@@ -59,8 +59,8 @@ class UserResource extends Resource
 
                         if($record->image_path != null)
                         {
-                            // return env('APP_URL') . Storage::url($record->image_path);
-                            return env('APP_URL') . $record->image_path;
+                            return env('APP_URL') . Storage::url($record->image_path);
+                            // return env('APP_URL') . '/' . $record->image_path;
                         }
                     
                         
