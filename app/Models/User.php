@@ -56,4 +56,10 @@ class User extends Authenticatable
     public function getAvatarAttribute() {
         return "https://gravatar.com/avatar/" . md5( strtolower( trim( $this-> email) ) );
     }
+
+    // Update Profile Pic Path
+    public function setImagePathAttribute($value)
+    {
+        $this->attributes['image_path'] = $value;
+    }
 }
