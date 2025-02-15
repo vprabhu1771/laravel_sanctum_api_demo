@@ -48,4 +48,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // Laravel Gravatar profile Image Request
+
+    protected $appends = ['avatar'];
+
+    public function getAvatarAttribute() {
+        return "https://gravatar.com/avatar/" . md5( strtolower( trim( $this-> email) ) );
+    }
 }
